@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products of user {{user}} </title>
+</head>
+    <body>
+    <h1>Hello, {{user}}!</h1>
+        {% if available_products_list %}
+        <h3>Available products for you:</h3>
+        <ol>
+            {% for product in available_products_list %}
+            <li>
+                <h3>{{product.title}} </h3>
+                {% for lesson in lessons_list %}
+                    <p>{{lesson.products}}</p>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ol>
+        {% else %}
+        <p>There is no available products for you</p>
+        {% endif %}
+    </body>
+</html>

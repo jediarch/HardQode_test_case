@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The product list</title>
+</head>
+<body>
+
+    {% if product_list %}
+    <ol>
+        {% for product in product_list %}
+        <li> {{product.title}}, <a href="{{product.id}}/details/">view</a></li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <p>Suddenly, there is no products yet</p>
+    {% endif %}
+</body>
+</html>

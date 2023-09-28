@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Details of product "{{product_title}}" </title>
+    </head>
+
+    <body>
+        <h1>{{product_title}}</h1>
+
+        <div>
+            <h3>Description </h3>
+            <p>{{description}}</p>
+        </div>
+
+        <h3>Lessons:</h3>
+        {% if lessons_list %}
+        <ol>
+            {% for lesson in lessons_list %}
+            <li> {{ lesson.title }} <a href="../../../lessons/{{lesson.id}}">view</a></li>
+            {% endfor %}
+        </ol>
+        {% else %}
+        <p>There is no lessons in this product</p>
+        {% endif %}
+    </body>
+</html>
